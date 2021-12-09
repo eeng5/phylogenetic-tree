@@ -57,6 +57,7 @@
  *   ]
  * }
  */
+
 (function(exports) {
     exports.parse = function(s) {
         var ancestors = [];

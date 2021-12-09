@@ -211,7 +211,8 @@ if (!d3) { throw "d3 wasn't included!"};
         var diagonal = options.diagonal || d3.phylogram.rightAngleDiagonal();
         var vis = options.vis || d3.select(selector).append("svg:svg")
             .attr("width", w + 300)
-            .attr("height", h + 30)
+            // .attr("height", h + 30)
+            .attr("height", h + 50)
             .append("svg:g")
             .attr("transform", "translate(20, 20)");
         var nodes = tree(nodes);
@@ -229,7 +230,8 @@ if (!d3) { throw "d3 wasn't included!"};
                 .data(yscale.ticks(10))
                 .enter().append('svg:line')
                 .attr('y1', 0)
-                .attr('y2', h)
+                // .attr('y2', h)
+                .attr('y2', h + 30)
                 .attr('x1', yscale)
                 .attr('x2', yscale)
                 .attr("stroke", "#ddd");
@@ -254,7 +256,7 @@ if (!d3) { throw "d3 wasn't included!"};
             .attr("d", diagonal)
             .attr("fill", "none")
             .attr("stroke", "#aaa")
-            .attr("stroke-width", "4px");
+            .attr("stroke-width", "3px");
 
         var node = vis.selectAll("g.node")
             .data(nodes)
@@ -327,6 +329,11 @@ if (!d3) { throw "d3 wasn't included!"};
         })
         vis.selectAll('g.node')
             .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+
+        // tooltip
+        vis.tooltip = d3.select("body").append('div')
+            .attr('class', "tooltip")
+            // .attr('id', 'artTooltip');
 
         if (!options.skipLabels) {
             vis.selectAll('g.leaf.node text')
