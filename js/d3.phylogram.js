@@ -160,15 +160,15 @@ if (!d3) { throw "d3 wasn't included!"};
         vis.selectAll('g.leaf.node')
             .append("svg:circle")
             .attr("r", 4.5)
-            .attr('stroke',  'yellowGreen')
-            .attr('fill', 'greenYellow')
+            .attr('stroke', '#34a0a4')
+            .attr('fill', '#34a0a4')
             .attr('stroke-width', '2px');
 
         vis.selectAll('g.root.node')
             .append('svg:circle')
             .attr("r", 4.5)
-            .attr('fill', 'steelblue')
-            .attr('stroke', '#369')
+            .attr('fill', '#184e77')
+            .attr('stroke', '#184e77')
             .attr('stroke-width', '2px');
     }
 
@@ -276,7 +276,7 @@ if (!d3) { throw "d3 wasn't included!"};
 
         d3.phylogram.styleTreeNodes(vis)
 
-        if (!options.skipLabels) {
+        if (!options.skipLabels) { // if skipLabels = false -> show phylogram
             vis.selectAll('g.inner.node')
                 .append("svg:text")
                 .attr("dx", -6)
@@ -303,7 +303,8 @@ if (!d3) { throw "d3 wasn't included!"};
         options = options || {}
         var w = options.width || d3.select(selector).style('width') || d3.select(selector).attr('width'),
             r = w / 2,
-            labelWidth = options.skipLabels ? 10 : options.labelWidth || 120;
+            // labelWidth = options.skipLabels ? 10 : options.labelWidth || 120;
+            labelWidth = options.labelWidth || 120;
 
         var vis = d3.select(selector).append("svg:svg")
             .attr("width", r * 2)
@@ -335,22 +336,37 @@ if (!d3) { throw "d3 wasn't included!"};
             .attr('class', "tooltip")
             // .attr('id', 'artTooltip');
 
-        if (!options.skipLabels) {
-            vis.selectAll('g.leaf.node text')
-                .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
-                .attr("dy", ".31em")
-                .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-                .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
-                .attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
-                .attr('font-size', '10px')
-                .attr('fill', 'black')
-                .text(function(d) { return d.data.name; });
+        vis.selectAll('g.leaf.node text')
+            .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+            .attr("dy", ".31em")
+            .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+            .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+            .attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
+            .attr('font-size', '10px')
+            .attr('fill', 'black')
+            .text(function(d) { return d.data.name; });
 
-            vis.selectAll('g.inner.node text')
-                .attr("dx", function(d) { return d.x < 180 ? -6 : 6; })
-                .attr("text-anchor", function(d) { return d.x < 180 ? "end" : "start"; })
-                .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; });
-        }
+        vis.selectAll('g.inner.node text')
+            .attr("dx", function(d) { return d.x < 180 ? -6 : 6; })
+            .attr("text-anchor", function(d) { return d.x < 180 ? "end" : "start"; })
+            .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; });
+
+        // if (!options.skipLabels) {
+        //     vis.selectAll('g.leaf.node text')
+        //         .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+        //         .attr("dy", ".31em")
+        //         .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+        //         .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+        //         .attr('font-family', 'Helvetica Neue, Helvetica, sans-serif')
+        //         .attr('font-size', '10px')
+        //         .attr('fill', 'black')
+        //         .text(function(d) { return d.data.name; });
+        //
+        //     vis.selectAll('g.inner.node text')
+        //         .attr("dx", function(d) { return d.x < 180 ? -6 : 6; })
+        //         .attr("text-anchor", function(d) { return d.x < 180 ? "end" : "start"; })
+        //         .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; });
+        // }
 
         return {tree: tree, vis: vis}
     }

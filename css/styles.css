@@ -22,6 +22,7 @@ body {
 #phylogram{
 }
 
-/*.link {*/
-/*    padding: 30px;*/
-/*}*/
+.tnt_tree_node circle {
+    fill: #34a0a4;
+    stroke: #34a0a4;
+}
