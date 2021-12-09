@@ -15,18 +15,20 @@ function load() {
     }
     buildNewickNodes(newick)
 
+    let d3 = d3v3;
+
     d3.phylogram.buildRadial('#radialtree', newick, {
         width: 600,
         skipLabels: true
     })
 
-    d3.phylogram.build('#phylogram', newick, {
-        width: 600,
-        // height: 400
-        // height: 1000
-        height: (newickNodes.length * 8)
-    });
+    // d3.phylogram.build('#phylogram', newick, {
+    //     width: 600,
+    //     // height: 400
+    //     // height: 1000
+    //     height: (newickNodes.length * 8)
+    // });
 
     let scaleableTree = new ScaleableTree("scaleableTree", original);
-    // let interactiveTree = new InteractiveTree("interactiveTree", newickNodes);
+    let interactiveTree = new InteractiveTree("interactiveTree", newickNodes);
 }

@@ -14,6 +14,8 @@ class ScaleableTree {
 
     initVis() {
 
+        let d3 = d3v3;
+
         var div = document.getElementById(this.parentElement);
 
         // console.log("data", this.data)

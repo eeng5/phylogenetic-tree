@@ -73,6 +73,7 @@
 
 if (!d3) { throw "d3 wasn't included!"};
 (function() {
+    let d3 = d3v3;
     d3.phylogram = {}
     d3.phylogram.rightAngleDiagonal = function() {
         var projection = function(d) { return [d.y, d.x]; }
