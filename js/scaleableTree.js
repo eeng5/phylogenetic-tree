@@ -3,6 +3,11 @@
 * * * * * * * * * * * * * */
 
 
+// const tnt4 = require("../packages/tnt4.tree.min.js");
+
+// import * as tnt4 from "../packages/tnt4.tree.min";
+
+
 class ScaleableTree {
 
     constructor(parentElement, data) {
@@ -15,6 +20,12 @@ class ScaleableTree {
     initVis() {
 
         let d3 = d3v3;
+
+        // var script = document.createElement("script");
+        // script.type = "text/javascript";
+        // script.src = "packages/tnt3.tree.min.js";
+        // document.getElementsByTagName("head")[0].appendChild(script);
+
 
         var div = document.getElementById(this.parentElement);
 
