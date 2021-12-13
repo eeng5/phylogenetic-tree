@@ -28,6 +28,15 @@
             each other! Scroll down for 3 unique representations of the same data!</h4>
     </div>
     <div style="height: 50px"></div>
+
+    <form>
+        <div class="form-group">
+            <label for="newick-data">Paste Newick-formatted data below to replace the default data. To learn more about Newick format, click <a href="https://rosalind.info/glossary/newick-format/">here</a>!</label>
+            <input class="form-control" type="text" id="newick-data" name="name" size="50" placeholder="(mammal:0.14,turtle:0.02,(rayfinfish:0.25,(frog:0.01,salamander:0.01)50:0.12)95:0.09);">
+            <small id="newick-help" class="form-text text-muted">Find sample Newick data <a href="">here</a>!</small>
+        </div>
+    </form>
+
     <div class="align-self-center">
         <h2 class="text-center">Circular Dendrogram</h2>
         <div id='radialtree'></div>
