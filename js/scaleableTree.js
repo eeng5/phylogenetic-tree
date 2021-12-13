@@ -32,35 +32,35 @@ class ScaleableTree {
         // console.log("data", this.data)
 
         // In the div, we set up a "select" to transition between scaled and non-scaled branches
-        var menu_pane = d3.select(div)
-            .append("div")
-            .append("span")
-            .text("Layout:  ");
-
-        var sel = menu_pane
-            .append("select")
-            .on("change", function (d) {
-                switch (this.value) {
-                    case "unscaled" :
-                        tree.layout().scale(false);
-                        break;
-                    case "scaled" :
-                        tree.layout().scale(true);
-                        break;
-                };
-                tree.update();
-            });
-
-        sel
-            .append("option")
-            .attr("value", "unscaled")
-            .attr("selected", 1)
-            .text("Unscaled");
-
-        sel
-            .append("option")
-            .attr("value", "scaled")
-            .text("Scaled");
+        // var menu_pane = d3.select(div)
+        //     .append("div")
+        //     .append("span")
+        //     .text("Layout:  ");
+        //
+        // var sel = menu_pane
+        //     .append("select")
+        //     .on("change", function (d) {
+        //         switch (this.value) {
+        //             case "unscaled" :
+        //                 tree.layout().scale(false);
+        //                 break;
+        //             case "scaled" :
+        //                 tree.layout().scale(true);
+        //                 break;
+        //         };
+        //         tree.update();
+        //     });
+        //
+        // sel
+        //     .append("option")
+        //     .attr("value", "unscaled")
+        //     .attr("selected", 1)
+        //     .text("Unscaled");
+        //
+        // sel
+        //     .append("option")
+        //     .attr("value", "scaled")
+        //     .text("Scaled");
 
         // Show different node shapes for collapsed/non-collapsed nodes
         var node_size = 10;
