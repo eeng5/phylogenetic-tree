@@ -17,7 +17,7 @@ class InteractiveTree {
 
         // var div = document.getElementById(this.parentElement);
 
-        console.log("dat", this.data)
+        // console.log("dat", this.data)
 
         d3 = d3v4;
 
@@ -47,7 +47,7 @@ class InteractiveTree {
         }
 
         root = d3.hierarchy(jsonData);
-        console.log("root ", root)
+        // console.log("root ", root)
         root.x0 = 0;
         root.y0 = 0;
         update(root);

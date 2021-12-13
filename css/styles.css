@@ -1,23 +1,46 @@
 
 body {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
-    padding: 30px;
+    padding: 40px;
 }
 
 /*#radialtree{*/
 /*}*/
 
-.tooltip {
-    position: absolute;
-    text-align: center;
-    width: 200px;
-    height: 28px;
-    padding: 2px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
-    border-radius: 8px;
-    /*  pointer-events: none;	This line needs to be removed */
-}
+/*.typewriter h4 {*/
+/*    overflow: hidden; !* Ensures the content is not revealed until the animation *!*/
+/*    border-right: .15em solid orange; !* The typwriter cursor *!*/
+/*    white-space: nowrap; !* Keeps the content on a single line *!*/
+/*    margin: 0 auto; !* Gives that scrolling effect as the typing happens *!*/
+/*    letter-spacing: .15em; !* Adjust as needed *!*/
+/*    animation:*/
+/*            typing 3.5s steps(40, end),*/
+/*            blink-caret .75s step-end infinite;*/
+/*}*/
+
+/*!* The typing effect *!*/
+/*@keyframes typing {*/
+/*    from { width: 0 }*/
+/*    to { width: 80% }*/
+/*}*/
+
+/*!* The typewriter cursor effect *!*/
+/*@keyframes blink-caret {*/
+/*    from, to { border-color: transparent }*/
+/*    50% { border-color: orange; }*/
+/*}*/
+
+/*.tooltip {*/
+/*    position: absolute;*/
+/*    text-align: center;*/
+/*    width: 200px;*/
+/*    height: 28px;*/
+/*    padding: 2px;*/
+/*    font: 12px sans-serif;*/
+/*    background: lightsteelblue;*/
+/*    border-radius: 8px;*/
+/*    !*  pointer-events: none;	This line needs to be removed *!*/
+/*}*/
 
 .tnt_tree_node circle {
     fill: #34a0a4;
