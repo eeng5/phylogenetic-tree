@@ -22,10 +22,10 @@ class InteractiveTree {
         d3 = d3v4;
 
         var margin = {top: 30, right: 20, bottom: 30, left: 20},
-            width = 960,
-            // width = 2000,
+            // width = 960,
+            width = 730,
             barHeight = 20,
-            barWidth = (width - margin.left - margin.right) * 0.8;
+            barWidth = ((width - margin.left - margin.right) * 0.8) / 2;
 
         var i = 0,
             duration = 400,

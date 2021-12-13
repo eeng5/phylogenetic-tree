@@ -48,8 +48,6 @@ function handleForm(event) { event.preventDefault(); }
 function DoSubmit(){
     // handleForm(event);
     let original = document.getElementById("newick-data").value;
-    console.log("orin", original)
     localStorage.setItem("data", document.getElementById("newick-data").value);
     // load(original);
-    console.log("ehl")
 }
