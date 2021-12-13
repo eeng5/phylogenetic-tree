@@ -6,20 +6,9 @@ function load(original) {
     // var original = "((raccoon:19.19959,bear:6.80041)InnerNode1:0.84600,((sea_lion:11.99700, seal:12.00300)InnerNode2:7.52973,((monkey:100.85930,cat:47.14069):20.59201, weasel:18.87953):2.09460):3.87382,dog:25.46154)"
     // var original = "(mammal:0.14,turtle:0.02,(rayfinfish:0.25,(frog:0.01,salamander:0.01)50:0.12)95:0.09);"
 
-    // const form = document.querySelector('form')
-    // form.addEventListener('submit', event => {
-    //     // submit event detected
-    //     event.preventDefault();
-    //     original = document.getElementById("newick-data").value;
-    //     console.log("submi", original)
-    // })
-
-    console.log("hello", original)
-
     var name = localStorage.getItem("data");
     if (name !== null) {
         original = name;
-        console.log("goti ", original)
     }
 
     var newick = Newick.parse(original);
